@@ -23,10 +23,15 @@ sns.set(style="white")
 sns.histplot(data=df, x="Log Flash Duration", hue="Taxon Group", multiple="stack", bins=50)
 
 # Customize plot appearance
-plt.xlabel("Log10(Flash Duration) [ms]")
-plt.ylabel("Count")
+plt.xlabel("Log (Flash or Pulse Duration in ms)")
+plt.ylabel("Species Count")
 plt.grid(axis='y', linestyle='--', alpha=0.7)  # Only horizontal grid lines
 plt.tight_layout()
+
+# Save as SVG for Illustrator editing
+output_file = "Bioluminescence_Duration_Histogram.svg"
+plt.savefig(output_file, format='svg')
+
 
 # Show the plot
 plt.show()
